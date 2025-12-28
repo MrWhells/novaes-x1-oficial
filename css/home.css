@@ -590,3 +590,27 @@ Este código cria um botão imponente, com um efeito de pulso e brilho que convi
         justify-content: center;
     }
 }
+@media (max-width: 600px) {
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+
+    /* Botões lado a lado viram um embaixo do outro se necessário */
+    .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Depoimentos em coluna única */
+    .depoimentos-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

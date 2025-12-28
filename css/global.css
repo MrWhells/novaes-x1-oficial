@@ -326,3 +326,15 @@ nav a:hover { color: var(--primary); }
         justify-content: center;
     }
 }
+/* IMPEDE O VAZAMENTO LATERAL EM QUALQUER DISPOSITIVO */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-shadow: none !important; /* Remove sombras que podem causar bugs em alguns navegadores mobile */
+    box-sizing: border-box;
+}

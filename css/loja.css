@@ -689,3 +689,41 @@ body {
     max-height: 150px;
     overflow-y: auto;
 }
+/* --- AJUSTES PARA CELULAR (ATÉ 768px) --- */
+@media (max-width: 768px) {
+    /* 1. Ajusta o Header para não cortar o menu */
+    .main-header {
+        padding: 0 15px;
+        height: 70px;
+    }
+    
+    .logo img { height: 40px; }
+
+    /* 2. Banner da Loja: Diminui o texto para caber na tela */
+    .loja-banner h1 {
+        font-size: 1.8rem !important;
+        padding: 0 10px;
+    }
+
+    /* 3. Vitrine: Força 1 ou 2 colunas dependendo do tamanho */
+    .grade-produtos {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    /* 4. Modal: Ocupa a tela quase toda no celular */
+    .modal-content {
+        width: 95% !important;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .modal-grid {
+        grid-template-columns: 1fr !important; /* Empilha foto e info */
+    }
+
+    .modal-img-container {
+        height: 250px !important;
+    }
+}
