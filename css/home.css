@@ -1,0 +1,592 @@
+/* css/home.css */
+
+.hero {
+    position: relative;
+    height: 90vh; /* Ocupa 90% da altura da tela */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Container do Vídeo */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4); /* Escurece o vídeo para o texto brilhar */
+}
+
+/* Conteúdo de Texto */
+.hero-content {
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Tamanho responsivo automático */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+/* Botões Customizados para a Hero */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--dark);
+}
+/* Seção de Vantagens */
+.vantagens {
+    padding: 80px 5%;
+    background: var(--dark-grey);
+}
+
+.vantagens .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vantagem-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(204, 255, 0, 0.1);
+    transition: var(--transition);
+}
+
+.vantagem-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    background: rgba(204, 255, 0, 0.05);
+}
+
+.vantagem-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.vantagem-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.vantagem-card p {
+    color: var(--grey);
+    line-height: 1.6;
+}
+.loja-slider {
+    padding: 80px 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.slider-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* O Segredo da Movimentação */
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(300px * 6 + 120px); /* Ajuste: Largura do card * quantidade total + gaps */
+    gap: 20px;
+    animation: rolagemInfinita 20s linear infinite;
+}
+
+/* Pausa ao passar o mouse */
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+.slide-item {
+    width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #222;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8); /* Um pouco mais claro que antes */
+    transition: 0.4s;
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,1) 20%, transparent);
+    z-index: 2;
+}
+
+/* GARANTINDO QUE AS LETRAS APAREÇAM */
+.slide-info h4 {
+    color: #FFFFFF; /* Branco puro */
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Sombra para destacar do fundo */
+    margin-bottom: 5px;
+}
+
+.slide-preco {
+    color: var(--primary); /* Seu verde neon */
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* KEYFRAMES DA ANIMAÇÃO */
+@keyframes rolagemInfinita {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente a metade da largura total (os 3 primeiros cards + gaps) */
+        transform: translateX(calc(-300px * 3 - 60px)); 
+    }
+}
+/* ITEM DO SLIDE COM EFEITO NEON */
+.slide-item {
+    width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    /* Borda sutil quando parado */
+    border: 1px solid rgba(204, 255, 0, 0.1); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* O MÁGICO EFEITO NEON NO HOVER */
+.slide-item:hover {
+    transform: scale(1.05) translateY(-10px); /* Dá um leve pulo para frente */
+    border-color: var(--primary); /* A borda fica verde neon */
+    
+    /* Camadas de brilho: interna, externa próxima e o "glow" distante */
+    box-shadow: 
+        inset 0 0 15px rgba(204, 255, 0, 0.2),
+        0 0 10px rgba(204, 255, 0, 0.5),
+        0 0 30px rgba(204, 255, 0, 0.2);
+    
+    z-index: 10; /* Garante que o card brilhe por cima dos outros */
+}
+
+/* Ajuste na imagem para clarear no hover */
+.slide-item:hover img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Linha de brilho no topo do card (detalhe premium) */
+.slide-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.slide-item:hover::before {
+    left: 100%;
+}
+/*2. O CSS (Adicionar ao `css/home.css`)
+
+Este código cria um botão imponente, com um efeito de pulso e brilho que convida ao clique:
+
+```css
+/* CONTAINER DO BOTÃO */
+.slider-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 20px;
+}
+
+/* BOTÃO ESTILO NEON */
+.btn-neon-store {
+    position: relative;
+    display: inline-block;
+    padding: 18px 45px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Efeito de preenchimento no Hover */
+.btn-neon-store:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 40px rgba(204, 255, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+/* O "Glow" pulsante atrás do botão */
+.btn-neon-store::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 50px;
+    opacity: 0;
+    filter: blur(20px);
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.btn-neon-store:hover::before {
+    opacity: 0.3;
+}
+
+/* Animação de pulso para chamar atenção */
+@keyframes pulseNeon {
+    0% { box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(204, 255, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(204, 255, 0, 0); }
+}
+
+.btn-neon-store {
+    animation: pulseNeon 2s infinite;
+}
+/* SEÇÃO DEPOIMENTOS */
+.depoimentos {
+    padding: 100px 5%;
+    background: #0a0a0a;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-depoimento {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+/* Destaque para o card do meio */
+.destaque-depo {
+    border-color: var(--primary);
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #111, #0a0a0a);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.aspas {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    color: var(--primary);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+.texto-depoimento {
+    font-style: italic;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.perfil-atleta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.perfil-atleta img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.card-depoimento:hover img {
+    filter: grayscale(0%);
+    border-color: var(--primary);
+}
+
+.perfil-info h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.perfil-info span {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-depoimento:hover {
+    background: #161616;
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+/* Ajuste mobile */
+@media (max-width: 768px) {
+    .destaque-depo { transform: scale(1); }
+    .depoimentos-grid { grid-template-columns: 1fr; }
+}
+/* SEÇÃO NEWSLETTER - CORRIGIDA */
+.newsletter {
+    padding: 80px 5%;
+    background: #050505; /* Fundo levemente diferente do preto absoluto */
+    border-top: 1px solid rgba(204, 255, 0, 0.2);
+    text-align: center;
+}
+
+.newsletter-text h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FFFFFF; /* Branco Puro */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.newsletter-text p {
+    color: #E0E0E0; /* Cinza muito claro (quase branco) */
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* INPUTS COM CONTRASTE ALTO */
+.input-group {
+    display: flex;
+    gap: 10px;
+    background: #121212; /* Fundo do input mais claro que o fundo da seção */
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #333; 
+    transition: var(--transition);
+}
+
+.input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding-left: 20px;
+    color: #FFFFFF; /* Garante que o que você digita seja branco */
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Placeholder (aquele texto 'Seu melhor e-mail') */
+.input-group input::placeholder {
+    color: #888888; /* Cinza médio para diferenciar do texto digitado */
+}
+
+.checkbox-container {
+    color: #FFFFFF; /* Texto do "Aceito receber conteúdos" agora é branco */
+    font-weight: 500;
+}
+/* RODAPÉ DE ELITE */
+.footer-arena {
+    background: #050505;
+    padding: 80px 5% 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    color: var(--primary); /* Verde Neon */
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    color: #E0E0E0; /* Branco acinzentado para leitura */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #AAAAAA;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #111;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.8rem;
+    border: 1px solid rgba(204, 255, 0, 0.2);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.footer-logo {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}

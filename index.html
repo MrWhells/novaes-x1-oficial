@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/novaesx1.svg" type="image/x-icon">
+    <title>NovaesX1 | Elite Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/novaesx1.svg" alt="NovaesX1">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="#treinos">Treinos</a></li>
+                <li><a href="#" class="btn-login">Entrar</a></li>
+            </ul>
+        </nav>
+        <div id="user-panel" class="user-panel-hidden">
+    <div class="panel-content">
+        <div class="user-info">
+            <div class="user-avatar">⚽</div>
+            <div class="user-text">
+                <span id="display-username">Jogador Elite</span>
+                <p class="user-rank">Nível 1 - Amador</p>
+            </div>
+        </div>
+
+        <div class="user-progress">
+            <div class="progress-labels">
+                <span>Evolução Técnica</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="user-progress-fill" class="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <button id="btn-logout" class="btn-logout">Sair</button>
+    </div>
+</div>
+    </header>
+
+    <main>
+        <section class="hero">
+    <div class="hero-video">
+        <video autoplay muted loop playsinline poster="assets/thumb-video.jpg">
+            <source src="assets/videointro.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+    <div class="hero-content">
+        <h1>Domine o Campo com <span class="highlight">NovaesX1</span></h1>
+        <p>Treinamentos de elite, equipamentos profissionais e a evolução que o seu jogo precisa.</p>
+        
+        <div class="hero-btns">
+            <a href="#treinos" class="btn-primary">Começar Treino</a>
+            <a href="loja.html" class="btn-outline">Visitar Loja</a>
+        </div>
+    </div>
+</section>
+<section class="vantagens">
+    <div class="container">
+        <div class="vantagem-card">
+            <div class="icon">👟</div>
+            <h3>Equipamentos</h3>
+            <p>Chuteiras e acessórios testados por profissionais do X1.</p>
+        </div>
+
+        <div class="vantagem-card">
+            <div class="icon">🔥</div>
+            <h3>Performance</h3>
+            <p>Planilhas de treino focadas em explosão e drible curto.</p>
+        </div>
+
+        <div class="vantagem-card">
+            <div class="icon">🏆</div>
+            <h3>Elite</h3>
+            <p>Faça parte da comunidade que mais cresce no cenário.</p>
+        </div>
+    </div>
+</section>
+<section class="loja-slider">
+    <div class="slider-titulo">
+        <h2>EQUIPAMENTOS <span class="highlight">EM DESTAQUE</span></h2>
+        <p>A elite não para. Confira os lançamentos.</p>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="slider-track">
+        </div>
+    </div>
+   
+    <div class="slider-cta">
+        <a href="loja.html" class="btn-neon-store">
+            <span>ENTRAR NA LOJA COMPLETA</span>
+            <div class="btn-glow"></div>
+        </a>
+    </div>
+</section>
+<section class="depoimentos">
+    <div class="slider-titulo">
+        <span class="subtopico">Voz da Arena</span>
+        <h2>NOVAESX1 A <span class="highlight">ELITE AFIRMA</span></h2>
+    </div>
+
+    <div class="depoimentos-grid">
+        <div class="card-depoimento">
+            <div class="aspas">"</div>
+            <p class="texto-depoimento">A chuteira Speed Pro mudou meu arranque no campo sintético. O grip é de outro nível, parece que o pé tá colado no chão.</p>
+            <div class="perfil-atleta">
+                <img src="assets/perfil/ricardo.webp" alt="Atleta 1">
+                <div class="perfil-info">
+                    <h4>Ricardo "Mago"</h4>
+                    <span>Ala Direita</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-depoimento destaque-depo">
+            <div class="aspas">"</div>
+            <p class="texto-depoimento">O treinamento tático me deu a visão que faltava. Agora sei exatamente como fechar o ângulo no X1. NovaesX1 é padrão profissional.</p>
+            <div class="perfil-atleta">
+                <img src="assets/perfil/lucas.webp" alt="Atleta 2">
+                <div class="perfil-info">
+                    <h4>Lucas Silva</h4>
+                    <span>Zagueiro / X1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-depoimento">
+            <div class="aspas">"</div>
+            <p class="texto-depoimento">Entrega rápida e material de primeira. O kit de cones é resistente e a camisa Dry-Fit realmente não pesa quando suamos.</p>
+            <div class="perfil-atleta">
+                <img src="assets/perfil/felipe.webp" alt="Atleta 3">
+                <div class="perfil-info">
+                    <h4>Felipe Tanque</h4>
+                    <span>Pivô</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="newsletter">
+    <div class="newsletter-container">
+        <div class="newsletter-text">
+            <h2>ENTRE PARA O <span class="highlight">CLUBE DE ELITE</span></h2>
+            <p>Receba avisos de novos drops, treinos exclusivos e cupons de desconto direto no seu e-mail.</p>
+        </div>
+        
+        <form id="newsletter-form" class="newsletter-form">
+            <div class="input-group">
+                <input type="email" id="news-email" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn-news">INSCREVER</button>
+            </div>
+            <label class="checkbox-container">
+                <input type="checkbox" required checked>
+                <span class="checkmark"></span>
+                Aceito receber conteúdos exclusivos e ofertas.
+            </label>
+        </form>
+    </div>
+</section>
+
+        </main>
+<div id="auth-modal" class="auth-modal">
+    <div class="auth-content">
+        <span class="auth-close">&times;</span>
+        
+        <div class="auth-header">
+            <h2 id="auth-title">Criar Conta Atleta</h2>
+            <p id="auth-subtitle">Junte-se à elite e acompanhe sua evolução.</p>
+        </div>
+
+        <form id="auth-form">
+            <div class="input-container">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+            
+            <div class="input-container">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Sua senha secreta" required>
+            </div>
+
+            <button type="submit" class="btn-full">Começar Jornada</button>
+        </form>
+
+        <div class="auth-footer">
+            <p id="auth-toggle-text">Já tem uma conta? <a href="#" id="auth-toggle-link">Fazer Login</a></p>
+        </div>
+    </div>
+</div>
+<footer class="footer-arena">
+    <div class="footer-container">
+        <div class="footer-col info">
+            <img src="assets/novaesx1.svg" alt="NovaesX1 Logo" class="footer-logo">
+            <p>A maior plataforma de elite para atletas de X1. Equipamentos, treinos e performance em um só lugar.</p>
+            <div class="social-links">
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">TK</a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>EXPLORAR</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loja.html">Equipamentos</a></li>
+                <li><a href="treinos.html">Área de Treino</a></li>
+                <li><a href="#">Comunidade</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>SUPORTE</h4>
+            <ul>
+                <li><a href="#">Minha Conta</a></li>
+                <li><a href="#">Rastrear Pedido</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 NovaesX1 - Todos os direitos reservados. Desenvolvido para Vencedores.</p>
+    </div>
+</footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

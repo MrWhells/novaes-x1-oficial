@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/novaesx1.svg" type="image/x-icon">
+    <title>Checkout | NovaesX1 Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        /* Estilos específicos para esta página sem mexer nos seus arquivos originais */
+        .checkout-page { padding: 120px 5% 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 40px; }
+        .checkout-form, .order-summary { background: #f9f9f9; padding: 30px; border-radius: 15px; border: 1px solid #eee; }
+        .checkout-form h2, .order-summary h2 { margin-bottom: 20px; border-left: 5px solid #25D366; padding-left: 15px; }
+        .input-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+        .input-group label { font-weight: 600; margin-bottom: 5px; }
+        .input-group input { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        .checkout-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .total-box { margin-top: 20px; font-size: 1.4rem; font-weight: 800; display: flex; justify-content: space-between; color: #000; }
+        .btn-finalizar-checkout { width: 100%; background: #000; color: #fff; padding: 18px; border: none; border-radius: 10px; font-weight: 800; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        .btn-finalizar-checkout:hover { background: #25D366; color: #000; }
+        @media (max-width: 850px) { .checkout-page { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="main-header" style="background: #000; position: fixed; top:0; width: 100%; z-index: 100;">
+        <div class="logo">
+            <a href="index.html"><img src="assets/novaesx1.svg" alt="NovaesX1" style="height: 40px;"></a>
+        </div>
+        <nav>
+            <ul style="display: flex; list-style: none; gap: 20px;">
+                <li><a href="loja.html" style="color: #fff; text-decoration: none;">Voltar para a Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-page">
+        <section class="checkout-form">
+            <h2>Dados do Atleta</h2>
+            <form id="form-checkout">
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Como quer ser chamado na arena?" required>
+                </div>
+                <div class="input-group">
+                    <label>WhatsApp (com DDD)</label>
+                    <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+                </div>
+                <div class="input-group">
+                    <label>Endereço de Entrega</label>
+                    <input type="text" id="endereco" placeholder="Rua, número e bairro" required>
+                </div>
+                <div class="input-group">
+                    <label>Observações (Opcional)</label>
+                    <input type="text" id="obs" placeholder="Ex: Tamanho da meia, cor preferida...">
+                </div>
+            </form>
+        </section>
+
+        <aside class="order-summary">
+            <h2>Resumo do Pedido</h2>
+            <div id="lista-checkout">
+                </div>
+            <div class="total-box">
+                <span>TOTAL</span>
+                <span id="total-checkout">R$ 0,00</span>
+            </div>
+            <button type="submit" form="form-checkout" class="btn-finalizar-checkout">ENVIAR PEDIDO AO WHATSAPP</button>
+        </aside>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Lógica específica para carregar os dados do carrinho nesta tela
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarResumoCheckout();
+        });
+
+        function renderizarResumoCheckout() {
+            // Aqui vamos buscar os dados que estão no 'carrinho' do main.js
+            // Em uma plataforma real, usaríamos localStorage para persistir entre páginas
+            const container = document.getElementById('lista-checkout');
+            const totalHTML = document.getElementById('total-checkout');
+            
+            // Simulação de leitura do carrinho (ajustaremos no main.js para persistir)
+            let total = 0;
+            // Lógica de renderização virá a seguir...
+        }
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dadosSalvos = localStorage.getItem('carrinhoNovaes');
+    if (dadosSalvos) {
+        const itens = JSON.parse(dadosSalvos);
+        const container = document.getElementById('lista-checkout');
+        const totalHTML = document.getElementById('total-checkout');
+        let somaTotal = 0;
+
+        container.innerHTML = '';
+        itens.forEach(item => {
+            const precoNum = parseFloat(item.preco.replace('R$', '').replace('.', '').replace(',', '.'));
+            const subtotal = precoNum * item.quantidade;
+            somaTotal += subtotal;
+
+            container.innerHTML += `
+                <div class="checkout-item" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span>${item.quantidade}x ${item.nome}</span>
+                    <span>R$ ${subtotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                </div>`;
+        });
+        totalHTML.innerText = `R$ ${somaTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+    }
+});
+// Adicione esta função dentro do <script> do checkout.html
+document.getElementById('form-checkout').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede a página de recarregar
+
+    // 1. Coleta os dados do Atleta
+    const nome = document.getElementById('nome').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const endereco = document.getElementById('endereco').value;
+    const obs = document.getElementById('obs').value;
+
+    // 2. Recupera os itens do Carrinho salvos no navegador
+    const dadosSalvos = localStorage.getItem('carrinhoNovaes');
+    if (!dadosSalvos) return alert("Erro ao recuperar pedido.");
+
+    const itens = JSON.parse(dadosSalvos);
+    let totalPedido = 0;
+
+    // 3. Monta o corpo da mensagem
+    let mensagem = `*NOVO PEDIDO - NOVAESX1* ⚽\n\n`;
+    mensagem += `*ATLETA:* ${nome}\n`;
+    mensagem += `*ZAP:* ${whatsapp}\n`;
+    mensagem += `*ENDEREÇO:* ${endereco}\n`;
+    if (obs) mensagem += `*OBS:* ${obs}\n`;
+    mensagem += `\n*PRODUTOS:*\n`;
+
+    itens.forEach(item => {
+        const precoNum = parseFloat(item.preco.replace('R$', '').replace('.', '').replace(',', '.'));
+        const subtotal = precoNum * item.quantidade;
+        totalPedido += subtotal;
+        
+        // Inclui quantidade, nome e subtotal na mensagem
+        mensagem += `• ${item.quantidade}x ${item.nome} - R$ ${subtotal.toFixed(2)}\n`;
+    });
+
+    mensagem += `\n*TOTAL: R$ ${totalPedido.toFixed(2)}*`;
+
+    // 4. Configura o link do WhatsApp (Substitua pelo seu número real abaixo)
+    const seuNumero = "5521992099322"; // COLOQUE SEU NÚMERO AQUI (Ex: 55 + DDD + NUMERO)
+   // Substitua a linha 152 por esta:
+const linkZap = `https://wa.me/${seuNumero}?text=${encodeURIComponent(mensagem)}`;
+
+    // 5. Limpa o carrinho após finalizar e envia
+    localStorage.removeItem('carrinhoNovaes');
+    window.location.href = linkZap;
+});
+</script>
+</body>
+</html>
