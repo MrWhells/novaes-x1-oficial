@@ -4,7 +4,7 @@
 
 // 1. BASE DE DADOS INTEGRADA
 const produtos = [
-    { id: 1, categoria: 'chuteiras', destaque: true, nome: 'Nike Zoom Orange', preco: 'R$ 259,90', img: ['assets/nike-airzoom-orange.webp', 'assets/nike-airzoom-orange.webp'], tag: 'Speed', descricao: 'Grip extremo e amortecimento responsivo. A cor laranja vibrante destaca você na arena.' },
+    { id: 1, categoria: 'chuteiras', destaque: true, nome: 'Nike Zoom Orange', preco: 'R$ 259,90', img: ['assets/nike-airzoom-orange.webp',], tag: 'Speed', descricao: 'Grip extremo e amortecimento responsivo. A cor laranja vibrante destaca você na arena.' },
     { id: 2, categoria: 'chuteiras', destaque: true, nome: 'Nike Air Zoom', preco: 'R$ 299,90', img: ['assets/nike-zoom-blue.webp', 'assets/nike-zoom-blue.webp'], tag: '', descricao: 'Tecnologia Air Zoom clássica para máximo retorno de energia e estabilidade.' },
     { id: 3, categoria: 'chuteiras', destaque: true, nome: 'Nike Air Zoom Vini Jr', preco: 'R$ 389,90', img: 'assets/nike-airzoom-vinijunior.webp', tag: 'Elite', descricao: 'Edição especial inspirada no craque Vini Jr. Design focado em agilidade lateral.' },
     { id: 4, categoria: 'vestuario', destaque: true, nome: 'Camisa Dry Fit', preco: 'R$ 89,90', img: 'assets/dry-fit.webp', tag: 'Promo', descricao: 'Tecido respirável de alta tecnologia. Mantém o corpo seco durante o treino.' },
@@ -268,5 +268,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (carrinho.length === 0) alert("Carrinho vazio!");
             else window.location.href = 'checkout.html';
         };
+    }
+});
+function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('active');
+}
+
+// Opcional: Fecha o menu se clicar fora dele
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('nav-menu');
+    const icon = document.querySelector('.mobile-menu-icon');
+    if (!menu.contains(e.target) && !icon.contains(e.target)) {
+        menu.classList.remove('active');
     }
 });

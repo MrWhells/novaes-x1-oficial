@@ -14,15 +14,37 @@
         <div class="logo">
             <a href="index.html"><img src="assets/novaesx1.svg" alt="NovaesX1"></a>
         </div>
-        <nav>
+       <header class="main-header">
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/novaesx1.svg" alt="NovaesX1">
+            </a>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#chuteiras">Chuteiras</a></li>
-                <li><a href="#vestuario">Vestuário</a></li>
-                <li><a href="#acessorios">Acessórios</a></li>
-                <li><a href="#" class="btn-login">Entrar</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html" class="active">Loja</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#Entrar"></a>Entrar</li>
             </ul>
         </nav>
+
+        <div class="header-icons">
+            <div class="cart-icon" id="cart-icon">
+                <img src="assets/carrinho-de-compras.png" alt="Carrinho">
+                <span id="cart-count">0</span>
+            </div>
+
+            <button class="mobile-menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
     </header>
 
     <main class="loja-page">

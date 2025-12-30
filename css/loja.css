@@ -727,3 +727,140 @@ body {
         height: 250px !important;
     }
 }
+/* --- ESTILO PADRÃO (DESKTOP) --- */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-icon {
+    position: relative; /* Mantém o contador colado nele */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    width: 30px; /* Tamanho fixo para não "sair da casinha" */
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* --- AJUSTE PARA TELAS GRANDES (RETORNO AO NORMAL) --- */
+@media (min-width: 769px) {
+    .cart-icon {
+        position: static; /* Remove qualquer "float" ou "fixed" anterior */
+        margin: 0;
+    }
+    
+    /* Garante que o ícone do carrinho gigante que apareceu na sua imagem suma */
+    .cart-icon img {
+        width: 25px; 
+    }
+}
+
+/* --- ESTILO MOBILE (CELULAR) --- */
+@media (max-width: 768px) {
+    .header-icons {
+        gap: 10px;
+    }
+    
+    /* Se você quiser que o carrinho flutue no mobile como na imagem a3c189 */
+    .cart-icon.floating {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ffff00; /* Fundo amarelo da sua imagem */
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+}
+
+/* ESCONDE O MENU DE TEXTO NO CELULAR */
+@media (max-width: 768px) {
+    .nav-menu:not(.active) {
+        display: none; /* Esconde a lista padrão para usar o menu lateral */
+    }
+}
+/* Isso força o logo para um lado e o grupo de ícones para o outro */
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important; 
+    align-items: center;
+    width: 100%;
+}
+
+/* Isso garante que o carrinho e o hambúrguer fiquem lado a lado na direita */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre eles */
+    margin-left: auto; /* Força o grupo a ir para o máximo à direita possível */
+}
+
+/* Garante que o botão hambúrguer seja visível no mobile */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: flex !important;
+        order: 2; /* Garante que ele seja o último após o carrinho */
+    }
+  .cart-icon img {
+    width: 25px; /* Ajuste o tamanho para não sumir */
+    height: auto;
+    display: block !important;
+}
+}
+@media (max-width: 768px) {
+    /* Container principal do produto */
+    .produto-detalhes {
+        display: flex;
+        flex-direction: column; /* Empilha tudo verticalmente */
+        padding: 20px;
+    }
+
+    /* Foto Principal: Garante que ela ocupe o espaço dela e não deixe nada subir */
+    .produto-imagem-principal {
+        width: 100%;
+        margin-bottom: 20px; /* Cria espaço para as miniaturas abaixo */
+        position: relative;
+    }
+
+    .produto-imagem-principal img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    /* Miniaturas: Alinha elas horizontalmente sem sobrepor a foto */
+    .miniaturas-container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 20px; /* Cria espaço para o texto abaixo */
+        position: static !important; /* Remove posicionamentos absolutos que causam sobreposição */
+    }
+
+    /* Textos (Nome e Preço): Garante que comecem após as miniaturas */
+    .produto-info {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .produto-info h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+}

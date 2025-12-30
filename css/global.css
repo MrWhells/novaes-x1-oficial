@@ -338,3 +338,75 @@ html, body {
     box-shadow: none !important; /* Remove sombras que podem causar bugs em alguns navegadores mobile */
     box-sizing: border-box;
 }
+/* Esconde o ícone no Desktop */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+.mobile-menu-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: #333; /* Cor das barrinhas */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    /* 1. O container do menu que desliza */
+    .nav-menu {
+        position: fixed;
+        right: -100%; /* Começa totalmente escondido */
+        top: 0;
+        width: 80%; /* Ocupa a maior parte da tela */
+        height: 100vh;
+        background-color: #111111 !important; /* Fundo preto sólido para contraste total */
+        display: flex !important;
+        flex-direction: column;
+        padding: 100px 30px; /* Espaço para o topo não cobrir o primeiro item */
+        transition: 0.4s ease-in-out;
+        z-index: 2500;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* 2. Quando o menu ganha a classe 'active' via JS */
+    .nav-menu.active {
+        right: 0 !important; /* Desliza para dentro da tela */
+    }
+
+    /* 3. Forçar os links a aparecerem (O GRANDE ERRO ATUAL) */
+    .nav-menu ul {
+        flex-direction: column;
+        list-style: none;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        color: #ffffff !important; /* Branco puro no texto */
+        font-size: 1.5rem !important; /* Texto grande para facilitar o toque */
+        font-weight: bold;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #333; /* Linha divisória para dar design */
+        padding-bottom: 10px;
+    }
+
+    /* 4. Ícone Hambúrguer (Garantir que ele fique visível sobre o menu) */
+    .mobile-menu-icon {
+        display: flex !important;
+        z-index: 3000; /* Sempre acima do fundo do menu */
+        position: relative;
+    }
+}
